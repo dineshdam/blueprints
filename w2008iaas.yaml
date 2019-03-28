@@ -1,0 +1,74 @@
+id: w2008iaas
+name: w2016
+description: ''
+status: PUBLISHED
+components:
+  IaaSNetwork:
+    type: Infrastructure.Network.Network.Existing
+    data:
+      name:
+        fixed: IaaSNetwork
+      network_profile:
+        fixed: IaaS-Network
+  w2016:
+    type: Infrastructure.CatalogItem.Machine.Virtual.vSphere
+    data:
+      _cluster:
+        default: 1
+        max: 3
+        min: 1
+      action:
+        fixed: LinkedClone
+      allow_storage_policies:
+        fixed: false
+      blueprint_type:
+        fixed: '1'
+      cpu:
+        default: 1
+        max: 2
+        min: 1
+      disks:
+      - capacity: 40
+        custom_properties: null
+        id: 1553698611667
+        initial_location: ''
+        is_clone: true
+        label: Hard disk 1
+        storage_reservation_policy: ''
+        userCreated: false
+        volumeId: 0
+      machine_prefix:
+        fixed:
+          id: DD-POC
+      max_network_adapters: {}
+      max_volumes: {}
+      memory:
+        default: 2000
+        max: 4096
+        min: 2000
+      provisioning_workflow:
+        fixed:
+          id: CloneWorkflow
+          label: CloneWorkflow
+      security_groups: []
+      security_tags: []
+      snapshot_name:
+        fixed: pre-install
+      source_machine:
+        fixed:
+          id: 287c8d46-56a8-4a20-8915-95bcf1b5ca67
+          label: DD-IAAS2
+      source_machine_external_snapshot:
+        fixed: 1
+      source_machine_name:
+        fixed: DD-IAAS2
+      source_machine_vmsnapshot:
+        fixed:
+          id: '4'
+      storage:
+        default: 40
+        max: 41
+        min: 40
+layout:
+  IaaSNetwork: 1,0
+  w2016: 0,0
